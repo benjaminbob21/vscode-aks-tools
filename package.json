@@ -249,10 +249,48 @@
                 "description": "Kickstart containerization for AKS",
                 "isSticky": true,
                 "commands": [
-                    { "name": "start", "description": "Start a kickstart session for current workspace" },
-                    { "name": "sample", "description": "Start a kickstart session using a sample repo" }
+                    {
+                        "name": "start",
+                        "description": "Start a kickstart session for current workspace"
+                    },
+                    {
+                        "name": "sample",
+                        "description": "Start a kickstart session using a sample repo"
+                    }
                 ],
                 "when": "config.aks.kickstartEnabledPreview"
+            }
+        ],
+        "chatSkills": [
+            {
+                "name": "analyze-repo",
+                "description": "Detect languages, frameworks, build systems, dependencies, databases, and environment variables in a repository as the first step toward containerization.",
+                "path": "./dist/skills/analyze-repo/SKILL.md"
+            },
+            {
+                "name": "generate-dockerfile",
+                "description": "Generate or enhance a Dockerfile for a containerized application using curated base-image recommendations and security best practices.",
+                "path": "./dist/skills/generate-dockerfile/SKILL.md"
+            },
+            {
+                "name": "fix-dockerfile",
+                "description": "Validate and remediate an existing Dockerfile against security, performance, and best-practice rules.",
+                "path": "./dist/skills/fix-dockerfile/SKILL.md"
+            },
+            {
+                "name": "generate-k8s-manifests",
+                "description": "Generate production-ready Kubernetes manifests (Deployment, Service, ConfigMap, Secret, ServiceAccount, optional HPA) for a containerized application.",
+                "path": "./dist/skills/generate-k8s-manifests/SKILL.md"
+            },
+            {
+                "name": "deploy-to-aks",
+                "description": "End-to-end orchestrator: analyze repo, generate/fix Dockerfile, build, scan, prepare AKS cluster, push to ACR, generate Kubernetes manifests, deploy, and verify on a real AKS + ACR target.",
+                "path": "./dist/skills/deploy-to-aks/SKILL.md"
+            },
+            {
+                "name": "deploy-to-kind",
+                "description": "End-to-end orchestrator: analyze repo, generate/fix Dockerfile, build, scan, prepare a local Kind cluster + registry, push, generate Kubernetes manifests, deploy, and verify locally. No Azure required.",
+                "path": "./dist/skills/deploy-to-kind/SKILL.md"
             }
         ],
         "commands": [
